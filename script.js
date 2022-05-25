@@ -31,3 +31,18 @@ let isAlive = setInterval(function () {
 document.addEventListener("keydown", function (event) {
     jump();
 })
+
+let score = document.querySelector("#score");
+
+// declaring variable for score
+let interval = null;
+let playerScore = 0;
+
+
+//funciton for score
+let scoreCounter = ()=> {
+    playerScore++;
+    score.innerHTML = `Score <b>${playerScore}</b>`;
+}
+
+interval = setInterval(scoreCounter, 200);
