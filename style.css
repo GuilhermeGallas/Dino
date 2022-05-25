@@ -71,3 +71,12 @@ body{
         left: -20px;
     }
 }
+
+
+#score {
+    height: 200px;
+    width: 480px;
+    position: absolute;
+    top: 300px;
+    right: 0;
+}
