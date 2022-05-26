@@ -1,5 +1,10 @@
 const dino = document.getElementById("dino");
 const cacto = document.getElementById("cacto");
+const road = document.getElementById("road");
+const cloud = document.getElementById("cloud");
+let result;
+let cont = 0;
+
 
 
 function jump() {
@@ -19,12 +24,19 @@ let isAlive = setInterval(function () {
 
   // get current cacto X position
     let cactoLeft = parseInt(window.getComputedStyle(cacto).getPropertyValue("left"));
+    
+    road.style.setProperty('--position', -cont + "%");
+    cont++;
+
+    cloud.style.setProperty('--position2', cont/2 + "%");
+    
 
 
     // detect collision
-    if (cactoLeft < 50 && cactoLeft > 0 && dinoTop >= 140) {
+    if (cactoLeft < 70 && cactoLeft > 20 && dinoTop >= 140) {
         // collision
         alert("Você perdeu!");
+        location.reload()
     }
 }, 10);
 
@@ -42,7 +54,17 @@ let playerScore = 0;
 //funciton for score
 let scoreCounter = ()=> {
     playerScore++;
-    score.innerHTML = `Score <b>${playerScore}</b>`;
+    if (playerScore < 10) 
+        result = `0000${playerScore}`
+    else if(playerScore < 100)
+        result = `000${playerScore}`
+    else if(playerScore < 1000)
+        result = `00${playerScore}`
+    else if(playerScore < 10000)
+        result = `0${playerScore}`
+    else
+        result = playerScore
+    score.innerHTML = `HI <b>${result}</b>`;
 }
 
-interval = setInterval(scoreCounter, 200);
+interval = setInterval(scoreCounter, 50);
