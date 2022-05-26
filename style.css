@@ -10,6 +10,7 @@ body{
     width: 600px;
     height: 200px;
     border: 1px solid black;
+    overflow: hidden;
 }
 
 #dino{
@@ -19,6 +20,8 @@ body{
     background-size: 50px 50px;
     position: relative;
     top: 150px;
+    margin-left: 20px;
+    
 }
 
 .jump{
@@ -72,11 +75,34 @@ body{
     }
 }
 
-
 #score {
-    height: 200px;
-    width: 480px;
+    height: 600px;
+    width: 720px;
     position: absolute;
-    top: 300px;
+    top: 380px;
     right: 0;
+}
+
+#road {
+    position: absolute;
+    height: 20px;
+    width: 600px;
+    background-image: url(road2.png);
+    background-repeat: repeat-x;
+    background-size: 80% 50%;
+    top: 562px;
+    --position: 0;
+    background-position: var(--position) 50%;
+}
+
+#cloud {
+    position: absolute;
+    height: 200px;
+    width: 600px;
+    background-image: url(cloud2.png);
+    background-repeat: repeat-x;
+    background-size: 175% 180%;
+    top: 240px;
+    --position2: 0;
+    background-position: var(--position2) 0%;
 }
